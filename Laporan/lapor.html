@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catatan Pembelian Komponen Praktik</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        .foto-placeholder {
+            width: 80px;
+            height: 60px;
+            background: #e9ecef;
+            border: 2px dashed #6c757d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #6c757d;
+            border-radius: 4px;
+        }
+        .total-row {
+            background-color: #28a745 !important;
+            color: white;
+            font-weight: bold;
+        }
+        .harga {
+            text-align: right;
+        }
+        .penjelasan {
+            background: #e7f3ff;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+            margin: 20px 0;
+        }
+        .qa-section {
+            margin-top: 30px;
+        }
+        .qa-item {
+            background: #f8f9fa;
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+        }
+        .question {
+            font-weight: bold;
+            color: #d63384;
+            margin-bottom: 8px;
+        }
+        .answer {
+            color: #333;
+            line-height: 1.6;
+        }
+        .highlight {
+            background: yellow;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📋 CATATAN PEMBELIAN KOMPONEN PRAKTIK</h1>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama Komponen</th>
+                    <th>Harga Satuan</th>
+                    <th>Jumlah</th>
+                    <th>Foto Barang</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>UNO R3 ATMEGA328 P + Kabel USB</td>
+                    <td class="harga">Rp 92.850</td>
+                    <td>7</td>
+                    <td><div class="foto-placeholder">Arduino<br>Uno R3</div></td>
+                    <td class="harga">Rp 649.950</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jumper Cable Male to Male 20cm (5 pcs)</td>
+                    <td class="harga">Rp 3.470</td>
+                    <td>35</td>
+                    <td><div class="foto-placeholder">Jumper<br>Cable</div></td>
+                    <td class="harga">Rp 252.644</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Adaptor CCTV 12V-2A 5.5*2.5mm</td>
+                    <td class="harga">Rp 19.000</td>
+                    <td>7</td>
+                    <td><div class="foto-placeholder">Adaptor<br>12V</div></td>
+                    <td class="harga">Rp 121.700</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Mini Breadboard 400 Tie Point</td>
+                    <td class="harga">Rp 17.433</td>
+                    <td>14</td>
+                    <td><div class="foto-placeholder">Mini<br>Breadboard</div></td>
+                    <td class="harga">Rp 221.655</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Modul LED Simulasi Lampu Lalu Lintas</td>
+                    <td class="harga">Rp 5.200</td>
+                    <td>28</td>
+                    <td><div class="foto-placeholder">LED<br>Traffic</div></td>
+                    <td class="harga">Rp 155.776</td>
+                </tr>
+                <tr class="total-row">
+                    <td colspan="5"><strong>TOTAL KESELURUHAN</strong></td>
+                    <td class="harga"><strong>Rp 1.401.725</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="penjelasan">
+            <h3>📊 PENJELASAN IURAN</h3>
+            <p><strong>Iuran Kesepakatan Pertama:</strong> <span class="highlight">Rp 1.295.000</span></p>
+            <p><strong>Rencana Pembayaran:</strong> Rp 37.000 × 35 anggota = Rp 1.295.000</p>
+            <p><strong>Harga Riil Pembelian:</strong> <span class="highlight">Rp 1.401.725</span></p>
+            <p><strong>Selisih:</strong> Rp 1.401.725 - Rp 1.295.000 = <span class="highlight">Rp 106.725</span></p>
+            <p><strong>Iuran Aktual per Orang:</strong> Rp 1.401.725 ÷ 35 = <span class="highlight">Rp 40.049 ≈ Rp 40.000</span></p>
+        </div>
+
+        <div class="qa-section">
+            <h2>❓ PERTANYAAN & JAWABAN</h2>
+            
+            <div class="qa-item">
+                <div class="question">Q: Kok harganya berubah dari kesepakatan awal sih?</div>
+                <div class="answer">A: Jadi gini guys, kemarin kan <strong>dana Rp 660.000 belum terkumpul</strong> sesuai target. Jadinya terpaksa harus cari alternatif pembelian di kondisi pasar yang beda.</div>
+            </div>
+
+            <div class="qa-item">
+                <div class="question">Q: Terus kenapa bisa naik segitu?</div>
+                <div class="answer">A: Ada beberapa faktor nih:
+                    <ul>
+                        <li>Dana awal belum cukup, jadi gak bisa beli sesuai rencana</li>
+                        <li>Harga komponen elektronik emang suka naik turun</li>
+                        <li>Harus beli dari 5 toko berbeda, jadi gak dapet harga grosir</li>
+                        <li>Stock barang murah udah habis di toko yang biasa</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="qa-item">
+                <div class="question">Q: Nambahnya berapa per orang?</div>
+                <div class="answer">A: Cuma nambah <strong>Rp 3.000 doang per orang</strong> (dari Rp 37.000 jadi Rp 40.000). Masih oke lah ya, mengingat situasinya urgent banget buat praktik.</div>
+            </div>
+
+            <div class="qa-item">
+                <div class="question">Q: Udah pasti gak berubah lagi kan harganya?</div>
+                <div class="answer">A: <strong>Udah fix!</strong> Soalnya pesanan udah di-checkout dan lagi dalam pengiriman. Estimasi sampai 24-27 September. Jadi harga udah gak bakal berubah lagi.</div>
+            </div>
+
+            <div class="qa-item">
+                <div class="question">Q: Jadi bayarnya gimana sekarang?</div>
+                <div class="answer">A: Setiap orang diharapkan <strong>tambah dana sebesar Rp 2.000 per orang</strong> (jadi total Rp 40.000) buat nutupin biaya pembelian komponen. Ini udah final ya guys!</div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px; padding: 20px; background: #d4edda; border-radius: 8px;">
+            <h3 style="color: #155724; margin: 0;">✅ Status: Pesanan Dalam Pengiriman</h3>
+            <p style="margin: 10px 0 0 0; color: #155724;">Estimasi Tiba: 24-27 September 2024</p>
+        </div>
+    </div>
+</body>
+</html>
