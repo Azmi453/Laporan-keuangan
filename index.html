@@ -421,12 +421,100 @@
         </div>
 
         <div style="text-align: center; margin-top: 30px; padding: 20px; background: #d4edda; border-radius: 8px;">
-            <h3 style="color: #155724; margin: 0;">✅ Status: Sudah Diterima</h3>
-            <p style="margin: 10px 0 0 0; color: #155724;">Estimasi Tiba: 24-27 September 2025</p>
+            <h3 style="color: #155724; margin: 0;">✅ Status: Pesanan Dalam Pengiriman</h3>
+            <p style="margin: 10px 0 15px 0; color: #155724;">Estimasi Tiba: 24-27 September 2024</p>
+            
+            <!-- Audio Controls -->
+            <div style="margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.8); border-radius: 8px;">
+                <p style="margin: 0 0 10px 0; color: #155724; font-weight: bold;">🎵 Background Music</p>
+                <audio id="backgroundMusic" loop style="width: 100%; max-width: 300px;">
+                    <source src="music/cintayangbertasbih.mp3" type="audio/mpeg">
+                    <source src="music/cintayangbertasbih.wav" type="audio/wav">
+                    Browser Anda tidak mendukung audio.
+                </audio>
+                <br>
+                <div style="margin-top: 10px;">
+                    <button id="playBtn" onclick="toggleMusic()" style="
+                        background: #28a745; 
+                        color: white; 
+                        border: none; 
+                        padding: 8px 16px; 
+                        border-radius: 5px; 
+                        cursor: pointer; 
+                        margin: 0 5px;
+                        font-size: 14px;
+                    ">🎵 Play Music</button>
+                    <button id="stopBtn" onclick="stopMusic()" style="
+                        background: #dc3545; 
+                        color: white; 
+                        border: none; 
+                        padding: 8px 16px; 
+                        border-radius: 5px; 
+                        cursor: pointer; 
+                        margin: 0 5px;
+                        font-size: 14px;
+                    ">⏹️ Stop</button>
+                </div>
+                <div style="margin-top: 8px;">
+                    <label style="color: #155724; font-size: 12px;">Volume: </label>
+                    <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="0.5" 
+                           onchange="changeVolume()" style="width: 100px;">
+                </div>
+            </div>
         </div>
     </div>
+
+    <!-- JavaScript untuk Audio Controls -->
+    <script>
+        const audio = document.getElementById('backgroundMusic');
+        const playBtn = document.getElementById('playBtn');
+        const volumeSlider = document.getElementById('volumeSlider');
+        
+        let isPlaying = false;
+
+        function toggleMusic() {
+            if (isPlaying) {
+                audio.pause();
+                playBtn.innerHTML = '🎵 Play Music';
+                playBtn.style.background = '#28a745';
+                isPlaying = false;
+            } else {
+                audio.play().then(() => {
+                    playBtn.innerHTML = '⏸️ Pause';
+                    playBtn.style.background = '#ffc107';
+                    isPlaying = true;
+                }).catch(e => {
+                    alert('Tidak bisa memainkan musik. Pastikan file musik ada di folder music/');
+                    console.log('Audio error:', e);
+                });
+            }
+        }
+
+        function stopMusic() {
+            audio.pause();
+            audio.currentTime = 0;
+            playBtn.innerHTML = '🎵 Play Music';
+            playBtn.style.background = '#28a745';
+            isPlaying = false;
+        }
+
+        function changeVolume() {
+            audio.volume = volumeSlider.value;
+        }
+
+        // Set initial volume
+        audio.volume = 0.5;
+
+        // Handle audio end (for non-looping tracks)
+        audio.addEventListener('ended', function() {
+            playBtn.innerHTML = '🎵 Play Music';
+            playBtn.style.background = '#28a745';
+            isPlaying = false;
+        });
+    </script>
 </body>
 </html>
+
 
 
 
