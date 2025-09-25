@@ -9,12 +9,12 @@
             font-family: Arial, sans-serif;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 10px;
             background-color: #f5f5f5;
         }
         .container {
             background: white;
-            padding: 30px;
+            padding: 20px;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
@@ -23,49 +23,103 @@
             color: #333;
             border-bottom: 3px solid #007bff;
             padding-bottom: 10px;
+            font-size: 1.5em;
         }
-        table {
+        
+        /* Desktop Table */
+        .desktop-table {
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
             background: white;
         }
-        th, td {
+        .desktop-table th, .desktop-table td {
             padding: 12px;
             text-align: left;
             border: 1px solid #ddd;
         }
-        th {
+        .desktop-table th {
             background-color: #007bff;
             color: white;
             font-weight: bold;
         }
-        tr:nth-child(even) {
+        .desktop-table tr:nth-child(even) {
             background-color: #f8f9fa;
         }
-        .foto-placeholder {
+        
+        /* Mobile Cards - Hidden on Desktop */
+        .mobile-cards {
+            display: none;
+        }
+        .item-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 15px 0;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .item-header {
+            background: #007bff;
+            color: white;
+            padding: 10px;
+            margin: -15px -15px 15px -15px;
+            border-radius: 7px 7px 0 0;
+            font-weight: bold;
+        }
+        .item-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 8px 0;
+            padding: 5px 0;
+            border-bottom: 1px dotted #eee;
+        }
+        .item-label {
+            font-weight: bold;
+            color: #666;
+        }
+        .item-value {
+            text-align: right;
+            color: #333;
+        }
+        
+        .foto-produk {
+            width: 150px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .foto-produk-small {
             width: 80px;
             height: 60px;
-            background: #e9ecef;
-            border: 2px dashed #6c757d;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            color: #6c757d;
+            object-fit: cover;
             border-radius: 4px;
+            border: 1px solid #ddd;
+            display: block;
+            margin: 0 auto;
         }
+        
         .total-row {
             background-color: #28a745 !important;
             color: white;
             font-weight: bold;
+        }
+        .total-card {
+            background: #28a745;
+            color: white;
+            font-weight: bold;
+            font-size: 1.1em;
         }
         .harga {
             text-align: right;
         }
         .penjelasan {
             background: #e7f3ff;
-            padding: 20px;
+            padding: 15px;
             border-radius: 8px;
             border-left: 4px solid #007bff;
             margin: 20px 0;
@@ -94,13 +148,76 @@
             padding: 2px 4px;
             border-radius: 3px;
         }
+        
+        /* Mobile Responsive */
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 5px;
+            }
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.2em;
+                padding-bottom: 8px;
+            }
+            
+            /* Hide desktop table on mobile */
+            .desktop-table {
+                display: none;
+            }
+            
+            /* Show mobile cards */
+            .mobile-cards {
+                display: block;
+            }
+            
+            .penjelasan {
+                padding: 12px;
+                font-size: 0.9em;
+            }
+            .penjelasan h3 {
+                font-size: 1.1em;
+                margin-top: 0;
+            }
+            
+            .qa-item {
+                padding: 12px;
+                font-size: 0.9em;
+            }
+            .question {
+                font-size: 0.95em;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+            h1 {
+                font-size: 1.1em;
+            }
+            .item-card {
+                padding: 12px;
+            }
+            .item-header {
+                margin: -12px -12px 12px -12px;
+                padding: 8px;
+                font-size: 0.9em;
+            }
+            .foto-produk-small {
+                width: 60px;
+                height: 45px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>📋 CATATAN PEMBELIAN KOMPONEN PRAKTIK</h1>
         
-        <table>
+        <!-- Desktop Table -->
+        <table class="desktop-table">
             <thead>
                 <tr>
                     <th>No</th>
@@ -117,15 +234,15 @@
                     <td>UNO R3 ATMEGA328 P + Kabel USB</td>
                     <td class="harga">Rp 92.850</td>
                     <td>7</td>
-                    <td><img src="photo/ardu.jpeg" alt="LED Traffic" style="width: 120px; height: 90px; object-fit: cover; border-radius: 4px;"></td>
+                    <td><img src="photo/ardu.jpeg" alt="Arduino Uno" class="foto-produk" style="width: 120px; height: 90px;"></td>
                     <td class="harga">Rp 649.950</td>
                 </tr>
                 <tr>
                     <td>2</td>
-                    <td>Kompone-Komponen kecil(Resistor, Led, dan Kabel)</td>
-                    <td class="harga">Rp 567- Rp 3.470</td>
+                    <td>Jumper Cable Male to Male 20cm (5 pcs)</td>
+                    <td class="harga">Rp 3.470</td>
                     <td>35</td>
-                    <td><img src="photo/ress.jpeg" alt="LED Traffic" style="width: 150px; height: 100px; object-fit: cover; border-radius: 4px;"></td>
+                    <td><img src="photo/ress.jpeg" alt="Jumper Cable" class="foto-produk"></td>
                     <td class="harga">Rp 252.644</td>
                 </tr>
                 <tr>
@@ -133,7 +250,7 @@
                     <td>Adaptor CCTV 12V-2A 5.5*2.5mm</td>
                     <td class="harga">Rp 19.000</td>
                     <td>7</td>
-                    <td><img src="photo/adaptor.jpeg" alt="LED Traffic" style="width: 150px; height: 100px; object-fit: cover; border-radius: 4px;"></td>
+                    <td><img src="photo/adaptor.jpeg" alt="Adaptor 12V" class="foto-produk"></td>
                     <td class="harga">Rp 121.700</td>
                 </tr>
                 <tr>
@@ -141,7 +258,7 @@
                     <td>Mini Breadboard 400 Tie Point</td>
                     <td class="harga">Rp 17.433</td>
                     <td>14</td>
-                   <td><img src="photo/bread.jpeg" alt="LED Traffic" style="width: 150px; height: 100px; object-fit: cover; border-radius: 4px;"></td>
+                    <td><img src="photo/bread.jpeg" alt="Breadboard" class="foto-produk"></td>
                     <td class="harga">Rp 221.655</td>
                 </tr>
                 <tr>
@@ -149,7 +266,7 @@
                     <td>Modul LED Simulasi Lampu Lalu Lintas</td>
                     <td class="harga">Rp 5.200</td>
                     <td>28</td>
-                    <td><img src="photo/led.jpeg" alt="LED Traffic" style="width: 150px; height: 100px; object-fit: cover; border-radius: 4px;"></td>
+                    <td><img src="photo/led.jpeg" alt="LED Traffic" class="foto-produk"></td>
                     <td class="harga">Rp 155.776</td>
                 </tr>
                 <tr class="total-row">
@@ -158,6 +275,116 @@
                 </tr>
             </tbody>
         </table>
+
+        <!-- Mobile Cards -->
+        <div class="mobile-cards">
+            <div class="item-card">
+                <div class="item-header">1. UNO R3 ATMEGA328 P + Kabel USB</div>
+                <div class="item-row">
+                    <span class="item-label">Harga Satuan:</span>
+                    <span class="item-value">Rp 92.850</span>
+                </div>
+                <div class="item-row">
+                    <span class="item-label">Jumlah:</span>
+                    <span class="item-value">7 pcs</span>
+                </div>
+                <div class="item-row">
+                    <span class="item-label">Foto:</span>
+                    <span class="item-value"><img src="photo/ardu.jpeg" alt="Arduino Uno" class="foto-produk-small"></span>
+                </div>
+                <div class="item-row">
+                    <span class="item-label"><strong>Total:</strong></span>
+                    <span class="item-value"><strong>Rp 649.950</strong></span>
+                </div>
+            </div>
+
+            <div class="item-card">
+                <div class="item-header">2. Jumper Cable Male to Male 20cm (5 pcs)</div>
+                <div class="item-row">
+                    <span class="item-label">Harga Satuan:</span>
+                    <span class="item-value">Rp 3.470</span>
+                </div>
+                <div class="item-row">
+                    <span class="item-label">Jumlah:</span>
+                    <span class="item-value">35 pcs</span>
+                </div>
+                <div class="item-row">
+                    <span class="item-label">Foto:</span>
+                    <span class="item-value"><img src="photo/ress.jpeg" alt="Jumper Cable" class="foto-produk-small"></span>
+                </div>
+                <div class="item-row">
+                    <span class="item-label"><strong>Total:</strong></span>
+                    <span class="item-value"><strong>Rp 252.644</strong></span>
+                </div>
+            </div>
+
+            <div class="item-card">
+                <div class="item-header">3. Adaptor CCTV 12V-2A 5.5*2.5mm</div>
+                <div class="item-row">
+                    <span class="item-label">Harga Satuan:</span>
+                    <span class="item-value">Rp 19.000</span>
+                </div>
+                <div class="item-row">
+                    <span class="item-label">Jumlah:</span>
+                    <span class="item-value">7 pcs</span>
+                </div>
+                <div class="item-row">
+                    <span class="item-label">Foto:</span>
+                    <span class="item-value"><img src="photo/adaptor.jpeg" alt="Adaptor 12V" class="foto-produk-small"></span>
+                </div>
+                <div class="item-row">
+                    <span class="item-label"><strong>Total:</strong></span>
+                    <span class="item-value"><strong>Rp 121.700</strong></span>
+                </div>
+            </div>
+
+            <div class="item-card">
+                <div class="item-header">4. Mini Breadboard 400 Tie Point</div>
+                <div class="item-row">
+                    <span class="item-label">Harga Satuan:</span>
+                    <span class="item-value">Rp 17.433</span>
+                </div>
+                <div class="item-row">
+                    <span class="item-label">Jumlah:</span>
+                    <span class="item-value">14 pcs</span>
+                </div>
+                <div class="item-row">
+                    <span class="item-label">Foto:</span>
+                    <span class="item-value"><img src="photo/bread.jpeg" alt="Breadboard" class="foto-produk-small"></span>
+                </div>
+                <div class="item-row">
+                    <span class="item-label"><strong>Total:</strong></span>
+                    <span class="item-value"><strong>Rp 221.655</strong></span>
+                </div>
+            </div>
+
+            <div class="item-card">
+                <div class="item-header">5. Modul LED Simulasi Lampu Lalu Lintas</div>
+                <div class="item-row">
+                    <span class="item-label">Harga Satuan:</span>
+                    <span class="item-value">Rp 5.200</span>
+                </div>
+                <div class="item-row">
+                    <span class="item-label">Jumlah:</span>
+                    <span class="item-value">28 pcs</span>
+                </div>
+                <div class="item-row">
+                    <span class="item-label">Foto:</span>
+                    <span class="item-value"><img src="photo/led.jpeg" alt="LED Traffic" class="foto-produk-small"></span>
+                </div>
+                <div class="item-row">
+                    <span class="item-label"><strong>Total:</strong></span>
+                    <span class="item-value"><strong>Rp 155.776</strong></span>
+                </div>
+            </div>
+
+            <div class="item-card total-card">
+                <div class="item-row">
+                    <span class="item-label">TOTAL KESELURUHAN:</span>
+                    <span class="item-value">Rp 1.401.725</span>
+                </div>
+            </div>
+        </div>
 
         <div class="penjelasan">
             <h3>📊 PENJELASAN IURAN</h3>
@@ -206,4 +433,3 @@
     </div>
 </body>
 </html>
-
