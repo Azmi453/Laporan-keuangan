@@ -26,6 +26,30 @@
             font-size: 1.5em;
         }
         
+        /* Table Overlay */
+        .table-overlay {
+            position: relative;
+        }
+
+        .lunas-stamp {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-15deg);
+            background: rgba(40, 167, 69, 0.1);
+            border: 4px solid #28a745;
+            color: #28a745;
+            font-size: 3em;
+            font-weight: bold;
+            padding: 20px 40px;
+            border-radius: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            box-shadow: 0 0 20px rgba(40, 167, 69, 0.3);
+            pointer-events: none;
+            z-index: 10;
+            letter-spacing: 8px;
+        }
+        
         /* Desktop Table */
         .desktop-table {
             width: 100%;
@@ -188,6 +212,12 @@
             .question {
                 font-size: 0.95em;
             }
+            
+            .lunas-stamp {
+                font-size: 2em;
+                padding: 15px 30px;
+                letter-spacing: 4px;
+            }
         }
         
         @media screen and (max-width: 480px) {
@@ -216,65 +246,90 @@
     <div class="container">
         <h1>📋 CATATAN PEMBELIAN KOMPONEN PRAKTIK</h1>
         
+        <div class="penjelasan" style="background: #fff3cd; border-left: 4px solid #ffc107;">
+             <h3>💰 CATATAN KEUANGAN | Update 26/09/2025</h3>
+             <p><strong>Uang cash:</strong> Rp 233.000</p>
+             <p><strong>Yang belum bayar:</strong> Rp 20.000</p>
+             <p><strong>Total cash:</strong> <span class="highlight">Rp 253.000</span></p>
+             <p><strong>Uang di bank:</strong> <span class="highlight">Rp 346.000</span></p>
+             <hr style="border: 1px solid #ffc107; margin: 15px 0;">
+             <p><strong>Total uang:</strong> <span class="highlight">Rp 599.000</span></p>
+             <p><strong>Harga barang yang belum dibayar:</strong> <span style="color: #dc3545;">Rp 587.000 (ARDUINO)</span></p>
+             <p><strong>Selisih:</strong> Rp 599.000 - Rp 587.000 = <span style="background: #f8d7da; color: #721c24; padding: 2px 6px; border-radius: 3px;">Rp 12.000</span></p>
+             <p><strong>Sisa Uang:</strong> <span class="highlight">Rp 12.000 (Sisa uang otomatis masuk ke Kas)</span></p>
+        </div>
+
+        <div class="penjelasan">
+            <h3>📊 PENJELASAN IURAN</h3>
+            <p><strong>Iuran Kesepakatan Diawal:</strong> <span class="highlight">Rp 1.295.000</span></p>
+            <p><strong>Total Uang yang Terkumpul: = Rp 1.352.000 </strong> | 35 dari 35 </p>
+            <p><strong>Total Harga Rill:</strong> <span class="highlight">Rp 1.340.000</span></p>
+            <p><strong>Selisih:</strong> Rp 1.340.000 - Rp 1.352.000 = <span class="highlight">Rp 12.000</span></p>
+            <p><strong>Total Uang:</strong> = <span class="highlight">Rp 12.000</span></p>
+        </div>
+
         <!-- Desktop Table -->
-        <table class="desktop-table">
-            <thead>
-                <tr>
-                    <th>No</th>
-                    <th>Nama Komponen</th>
-                    <th>Harga Satuan</th>
-                    <th>Jumlah</th>
-                    <th>Foto Barang</th>
-                    <th>Total</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>UNO R3 ATMEGA328 P + Kabel USB</td>
-                    <td class="harga">Rp 92.850</td>
-                    <td>7</td>
-                    <td><img src="photo/ardu.jpeg" alt="Arduino Uno" class="foto-produk" style="width: 120px; height: 90px;"></td>
-                    <td class="harga">Rp 587.000</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Komponen-Komponen lainnya (Resistor, Led, dan Kabel)</td>
-                    <td class="harga">Rp 342 - Rp 3.470</td>
-                    <td>35</td>
-                    <td><img src="photo/ress.jpeg" alt="Jumper Cable" class="foto-produk"></td>
-                    <td class="harga">Rp 253.000</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Adaptor CCTV 12V-2A 5.5*2.5mm</td>
-                    <td class="harga">Rp 19.000</td>
-                    <td>7</td>
-                    <td><img src="photo/adaptor.jpeg" alt="Adaptor 12V" class="foto-produk"></td>
-                    <td class="harga">Rp 122.000</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Mini Breadboard 400 Tie Point</td>
-                    <td class="harga">Rp 17.433</td>
-                    <td>14</td>
-                    <td><img src="photo/bread.jpeg" alt="Breadboard" class="foto-produk"></td>
-                    <td class="harga">Rp 222.000</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>Modul LED Simulasi Lampu Lalu Lintas</td>
-                    <td class="harga">Rp 5.200</td>
-                    <td>28</td>
-                    <td><img src="photo/led.jpeg" alt="LED Traffic" class="foto-produk"></td>
-                    <td class="harga">Rp 156.000</td>
-                </tr>
-                <tr class="total-row">
-                    <td colspan="5"><strong>TOTAL KESELURUHAN</strong></td>
-                    <td class="harga"><strong>Rp 1.340.000</strong></td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="table-overlay">
+            <table class="desktop-table">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama Komponen</th>
+                        <th>Harga Satuan</th>
+                        <th>Jumlah</th>
+                        <th>Foto Barang</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>UNO R3 ATMEGA328 P + Kabel USB</td>
+                        <td class="harga">Rp 92.850</td>
+                        <td>7</td>
+                        <td><img src="photo/ardu.jpeg" alt="Arduino Uno" class="foto-produk" style="width: 120px; height: 90px;"></td>
+                        <td class="harga">Rp 587.000</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Komponen-Komponen lainnya (Resistor, Led, dan Kabel)</td>
+                        <td class="harga">Rp 342 - Rp 3.470</td>
+                        <td>35</td>
+                        <td><img src="photo/ress.jpeg" alt="Jumper Cable" class="foto-produk"></td>
+                        <td class="harga">Rp 253.000</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Adaptor CCTV 12V-2A 5.5*2.5mm</td>
+                        <td class="harga">Rp 19.000</td>
+                        <td>7</td>
+                        <td><img src="photo/adaptor.jpeg" alt="Adaptor 12V" class="foto-produk"></td>
+                        <td class="harga">Rp 122.000</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Mini Breadboard 400 Tie Point</td>
+                        <td class="harga">Rp 17.433</td>
+                        <td>14</td>
+                        <td><img src="photo/bread.jpeg" alt="Breadboard" class="foto-produk"></td>
+                        <td class="harga">Rp 222.000</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Modul LED Simulasi Lampu Lalu Lintas</td>
+                        <td class="harga">Rp 5.200</td>
+                        <td>28</td>
+                        <td><img src="photo/led.jpeg" alt="LED Traffic" class="foto-produk"></td>
+                        <td class="harga">Rp 156.000</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td colspan="5"><strong>TOTAL KESELURUHAN</strong></td>
+                        <td class="harga"><strong>Rp 1.340.000</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+             
+        </div>
 
         <!-- Mobile Cards -->
         <div class="mobile-cards">
@@ -290,7 +345,10 @@
                 </div>
                 <div class="item-row">
                     <span class="item-label">Foto:</span>
-                    <span class="item-value"><img src="photo/ardu.jpeg" alt="Arduino Uno" class="foto-produk-small"></span>
+                    <span class="item-value" style="position: relative;">
+                        <img src="photo/ardu.jpeg" alt="Arduino Uno" class="foto-produk-small">
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-15deg); background: rgba(40, 167, 69, 0.9); border: 2px solid #28a745; color: white; font-size: 0.7em; font-weight: bold; padding: 2px 6px; border-radius: 4px; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">LUNAS</div>
+                    </span>
                 </div>
                 <div class="item-row">
                     <span class="item-label"><strong>Total:</strong></span>
@@ -310,7 +368,10 @@
                 </div>
                 <div class="item-row">
                     <span class="item-label">Foto:</span>
-                    <span class="item-value"><img src="photo/ress.jpeg" alt="Jumper Cable" class="foto-produk-small"></span>
+                    <span class="item-value" style="position: relative;">
+                        <img src="photo/ress.jpeg" alt="Jumper Cable" class="foto-produk-small">
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-15deg); background: rgba(40, 167, 69, 0.9); border: 2px solid #28a745; color: white; font-size: 0.7em; font-weight: bold; padding: 2px 6px; border-radius: 4px; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">LUNAS</div>
+                    </span>
                 </div>
                 <div class="item-row">
                     <span class="item-label"><strong>Total:</strong></span>
@@ -330,7 +391,10 @@
                 </div>
                 <div class="item-row">
                     <span class="item-label">Foto:</span>
-                    <span class="item-value"><img src="photo/adaptor.jpeg" alt="Adaptor 12V" class="foto-produk-small"></span>
+                    <span class="item-value" style="position: relative;">
+                        <img src="photo/adaptor.jpeg" alt="Adaptor 12V" class="foto-produk-small">
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-15deg); background: rgba(40, 167, 69, 0.9); border: 2px solid #28a745; color: white; font-size: 0.7em; font-weight: bold; padding: 2px 6px; border-radius: 4px; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">LUNAS</div>
+                    </span>
                 </div>
                 <div class="item-row">
                     <span class="item-label"><strong>Total:</strong></span>
@@ -350,7 +414,10 @@
                 </div>
                 <div class="item-row">
                     <span class="item-label">Foto:</span>
-                    <span class="item-value"><img src="photo/bread.jpeg" alt="Breadboard" class="foto-produk-small"></span>
+                    <span class="item-value" style="position: relative;">
+                        <img src="photo/bread.jpeg" alt="Breadboard" class="foto-produk-small">
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-15deg); background: rgba(40, 167, 69, 0.9); border: 2px solid #28a745; color: white; font-size: 0.7em; font-weight: bold; padding: 2px 6px; border-radius: 4px; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">LUNAS</div>
+                    </span>
                 </div>
                 <div class="item-row">
                     <span class="item-label"><strong>Total:</strong></span>
@@ -370,7 +437,10 @@
                 </div>
                 <div class="item-row">
                     <span class="item-label">Foto:</span>
-                    <span class="item-value"><img src="photo/led.jpeg" alt="LED Traffic" class="foto-produk-small"></span>
+                    <span class="item-value" style="position: relative;">
+                        <img src="photo/led.jpeg" alt="LED Traffic" class="foto-produk-small">
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-15deg); background: rgba(40, 167, 69, 0.9); border: 2px solid #28a745; color: white; font-size: 0.7em; font-weight: bold; padding: 2px 6px; border-radius: 4px; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">LUNAS</div>
+                    </span>
                 </div>
                 <div class="item-row">
                     <span class="item-label"><strong>Total:</strong></span>
@@ -385,30 +455,14 @@
                 </div>
             </div>
         </div>
-
-        <div class="penjelasan">
-            <h3>📊 PENJELASAN IURAN</h3>
-            <p><strong>Iuran Kesepakatan Diawal:</strong> <span class="highlight">Rp 1.295.000</span></p>
-            <p><strong>Total Uang yang Terkumpul: = Rp 1.188.000 </strong> | 32 dari 35 </p>
-            <p><strong>Total Harga Rill:</strong> <span class="highlight">Rp 1.340.000</span></p>
-            <p><strong>Selisih:</strong> Rp 1.340.000 - Rp 1.188.000 = <span class="highlight">Rp 154.000</span></p>
-            <p><strong>Biaya yang kurang:</strong> = <span class="highlight">Rp 154.000</span></p>
-        </div>
-
-         <div class="penjelasan" style="background: #fff3cd; border-left: 4px solid #ffc107;">
-             <h3>💰 CATATAN KEUANGAN | Update 26/09/2025</h3>
-             <p><strong>Uang cash:</strong> Rp 224.000</p>
-             <p><strong>Yang belum bayar:</strong> 0</p>
-             <p><strong>Total cash:</strong> <span class="highlight">Rp 224.000</span></p>
-             <p><strong>Uang di bank:</strong> <span class="highlight">Rp 346.000</span></p>
-             <hr style="border: 1px solid #ffc107; margin: 15px 0;">
-             <p><strong>Total uang:</strong> <span class="highlight">Rp 590.000</span></p>
-             <p><strong>Harga barang yang belum dibayar:</strong> <span style="color: #dc3545;">Rp 587.000 (ARDUINO)</span></p>
-             <p><strong>Jumlah uang yang kurang:</strong> Rp 590.000 - Rp 587.000 = <span style="background: #f8d7da; color: #721c24; padding: 2px 6px; border-radius: 3px;">-Rp 47.000</span></p>
-             <p><strong>Sisa Uang:</strong> <span class="highlight">Rp 3.000 (Sisa akan masuk ke Kas)</span></p>
-        </div>
         
         <div class="qa-section">
+             <div class="qa-item">
+                <div class="question">💝 Ucapan Terima Kasih</div>
+                <div class="answer">Terima kasih banyak untuk semua teman-teman yang sudah sangat membantu dalam pengumpulan dana komponen praktik ini. <strong>Tanpa dukungan kalian semua, proyek ini tidak akan berjalan lancar seperti sekarang.</strong> 
+                <br><br>
+                <strong>Khususnya untuk teman-teman yang sudah menambah iuran dengan ikhlas, semoga kebaikan kalian dibalas berlipat ganda oleh Yang Maha Kuasa. Sehat selalu dan sukses untuk kita semua! 🙏</strong></div>
+            </div>
             <h2>❓ PERTANYAAN & JAWABAN</h2>
             
             <div class="qa-item">
@@ -426,16 +480,11 @@
                 <div class="answer">A: <strong>Udah fix!</strong> Soalnya pesanan udah di-checkout dan lagi dalam pengiriman. Jadi harga udah gak bakal berubah lagi.</div>
             </div>
 
-            <div class="qa-item">
-                <div class="question">Q: Jadi gimana sekarang?</div>
-                <div class="answer">A: Diharapkan untuk semua orang,<strong> setidaknya menambah min Rp 2.000 saja</strong> untuk menutupi kekurangannya. semoga bisa dimengerti yaa guys!
-                <strong>Dan juga untukmu yang sudah menambah uang iurannya sehat-sehat selalu yaa :)</strong></div>
-            </div>
         </div>
 
         <div style="text-align: center; margin-top: 30px; padding: 20px; background: #d4edda; border-radius: 8px;">
             <h3 style="color: #155724; margin: 0;">Takdir milik Allah...Tapi Usaha dan Doa adalah milik Kita.</h3>
-            <p style="margin: 10px 0 15px 0; color: #155724;">✅ Status: Sedang dimiliki Orang Lain.</p>
+            <p style="margin: 10px 0 15px 0; color: #155724;"> <strong>✅ Status: Sedang dimiliki Orang Lain.</strong></p>
             
             <!-- Audio Controls -->
             <div style="margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.8); border-radius: 8px;">
@@ -527,16 +576,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
